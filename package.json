@@ -1,0 +1,43 @@
+{
+  "name": "writers-portal",
+  "version": "1.0.0",
+  "description": "This is a writing portal for assignments",
+  "main": "server.js",
+  "scripts": {
+    "start": "node -r esm server.js",
+    "dev": "nodemon -r esm server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paullaster/writers-portal.git"
+  },
+  "keywords": [
+    "writers",
+    "portal",
+    "academic",
+    "writting",
+    "get",
+    "your",
+    "assignments",
+    "done"
+  ],
+  "author": "paullaster okoth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paullaster/writers-portal/issues"
+  },
+  "homepage": "https://github.com/paullaster/writers-portal#readme",
+  "dependencies": {
+    "eslint": "^7.31.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.3",
+    "prettier": "^2.3.2",
+    "sha256": "^0.2.0",
+    "stripe": "^8.163.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6"
+  }
+}
