@@ -1,6 +1,7 @@
 //Middlewares
 import express from 'express';
 import mongoose from 'mongoose';
+import path from 'path';
 
 //Modules APIs
 import config from './config/config';
@@ -8,6 +9,8 @@ import { userController } from './controller';
 //Intialize app
 const app = express();
 
+//settings
+app.use(express.static(path.join(__dirname,'public')));
 //Database connection
 mongoose.connect(config.dbUri, {
     useNewUrlParser: true,

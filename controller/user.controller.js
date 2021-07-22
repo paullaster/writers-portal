@@ -2,21 +2,25 @@
 import express from 'express';
 import { User } from '../database/model';
 import sha256 from 'sha256';
+import path from 'path';
 
 
 //User controller
 const userController = express.Router();
 
-
+//user setting 
+userController.use(express.static(path.join(__dirname, 'public')));
 
 //Getting user API
 userController.get('/',(req,res)=>{
-    User.find({}, (err, result)=>{
-      res.status(200).json({
-        data: result
-      });
+    // User.find({}, (err, result)=>{
+    //   res.status(200).json({
+    //     data: result
+    //   });
+    // });
+    res.sendFile('index.html', (err)=>{
+        console.error(err);
     });
-    
 });
 //Creating new user API
 userController.post('/add-user',(req,res)=>{
