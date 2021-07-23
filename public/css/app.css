@@ -105,7 +105,7 @@ body{
 .story{
     margin-top: 4em;
     background-color: white;
-    padding: 2% 8% 2% 8%;
+    padding: 2% 5.4% 2% 5.4%;
 }
 .heading-secondary{
     border-left: .2em black solid;
@@ -120,8 +120,8 @@ body{
 .stories{
     display: grid;
     grid-template-columns: 50% 50%;
-    column-gap: .4em;
-    row-gap: .4em;
+    column-gap: 1.2em;
+    row-gap: 1.2em;
 }
 .stories-content{
     display: grid;
@@ -159,7 +159,7 @@ body{
 .writers{
     margin-top: 4em;
     background-color: white;
-    padding: 2% 4% 2% 8%;
+    padding: 2% 4.8% 2% 4%;
 }
 .writers-list{
     display: grid;
@@ -250,5 +250,149 @@ body{
     border-radius: .4em;
     padding: 4% 12% 4% 12%;
     box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.061);
+}
+/*features section*/
+.features{
+    margin-top: 4em;
+    background-color: white;
+    padding: 2% 4.8% 2% 4%;
+}
+.features-div{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    column-gap: 1.6em;
+}
+.guarantees{
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.123);
+    border-radius: .8em;
+    padding: 8%;  
+}
+.guarantees-services{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+.guarantee-heading{
+    margin-left: 40%;
+}
+.icons > span{
+    display: block;
+    width: 40%;
+    background-color: #436b95;
+    padding: 6%;
+    margin-bottom: 63%;
+    color: #f8f8f8;
+    border-radius: 10em;
+    text-align: center;
+}
+.icons > span:last-child{
+    margin-bottom: 0;
+}
+.words > span{
+    display: block;
+    padding: 8% 8% 8% .8%;
+    margin-bottom:33.9%;
+    font-size: 1.6em;
+    font-family: 'overpass', sans-serif;
+}
+.words > span :last-child{
+    margin-bottom: 0;
+}
+.section-fields{
+    padding: 4%;
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.123);
+    border-radius: .8em;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    column-gap: .4em;
+    row-gap: 1.2em;
+    font-size: 1.5em;
+    font-family: 'overpass', sans-serif;
+}
+.fields{
+    border-bottom: .1em #436b95 solid;
+}
+.fields-icon-div{
+    /* margin-left: 25%; */
+    margin-bottom: 4%;
+    /*padding: 2% 8% .8% 4%;*/
+    background-color: #436b95;
+    height: 22%;
+    width: 19%;
+    text-align: center;
+    padding-top: 4%;
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.123);
+}
+.fields-icon-div > span{
+    color: #f8f8f8;
     
+}
+.field-name{
+    padding: .8%;
+}
+/* Testimonials */
+.testimonials{
+    margin-top: 4em;
+    background-color: white;
+    padding: 2% 4.8% 2% 4%;
+}
+.testimonies{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.123);
+    border-radius: .8em;
+    padding-left: 4.5%;
+}
+.scroller{
+    margin-top: 90%;
+    background-color: rgb(88, 193, 235);
+    width: 54%;
+    height: 32%;
+    padding: 20% 4% 8% 4%;
+    color: #f8f8f8;
+    border-radius: .8em;
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.123);
+}
+.right-style > span{
+    margin-left: 32%;
+    width:30%;
+}
+.left-style > span{
+    margin-left: 12%;
+
+}
+.rev-text{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+/* quotations */
+.q-left{
+    border-right: .2em rgb(88, 193, 235) solid;
+    width: 40%;
+    color: rgb(88, 193, 235);
+    padding-top: 60%;
+}
+.q-right{
+    border-left: .2em rgb(88, 193, 235) solid;
+    width: 40%;
+    color: rgb(88, 193, 235);
+    padding-left:16%;
+    padding-top: 60%;
+    margin-left: 40%;
+}
+.rev-text-area{
+    /* background-color: orangered; */
+    margin-left: -3.7em;
+    padding: 4%;
+    font-family: 'overpass', sans-serif;
+    font-size: 2em;
+}
+.client-details{
+    padding-left: 30%;
+    margin-top: 4%;
+    font-size: 1.5em;
+    font-family: 'overpass', sans-serif;
+}
+.client-details > span{
+    display: block;
+    margin-bottom: 2%;
 }
