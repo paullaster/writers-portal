@@ -444,3 +444,51 @@ body{
     font-size: .6em;
     font-weight: 400;
 }
+/*Login section*/
+.bg-color{
+    background: linear-gradient(to right, #4998d0ad 5%, #436b95 30%);
+}
+.section-login{
+    height: 70vh;
+    font-family: 'overpass', sans-serif;
+    font-size: 1.6em;
+    padding: 4% 16% 20% 16%;
+}
+.section-div{
+    padding: 4% 0 10% 0;
+    width: 80%;
+    margin-left: 4em;
+    border: .1em #f8f8f817 solid;
+    border-radius: .4em;
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.048);
+}
+.section-div > p{
+    color: #f8f8f8;
+    margin-left: 12.2em;
+    font-weight: 600;
+    padding-bottom: 1.6%;
+}
+.login-logo{
+    display: block;
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.007);
+    margin-left: 11em;
+}
+.login-container{
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 1em;
+    color: #f8f8f8;
+}
+.login-container > div{
+    padding: .4%;
+    text-align: center;
+    border: .1em #f8f8f821 solid;
+    border-radius: .4em;
+    width: 50%;
+    margin-left: 8em;
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.034);
+}
+.logo-container{
+    text-align: center;
+
+}
