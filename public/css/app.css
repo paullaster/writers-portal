@@ -492,3 +492,96 @@ body{
     text-align: center;
 
 }
+.login-btn{
+    cursor: pointer;
+}
+/*styling login page*/
+.login-div{
+    width: 55%;
+    margin-left: 24.8%;
+    padding-bottom: 2%;
+    border: .1em #f8f8f817 solid;
+    border-radius: .4em;
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.055);
+}
+.logo-login{
+    padding-left: 28.4%;
+    margin-top: -.4em;
+}
+.login-div-container{
+    margin-top: -2em;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+.login-text-div{
+    padding: 4% 0 8% 0;
+    text-align: center;
+    font-weight: 800;
+    color: #f8f8f8;
+}
+.input-div{
+    margin-bottom: 4%;
+    padding-left: 15%;
+}
+.login-label{
+    font-weight: 600;
+    color: #f8f8f8;
+    font-size: .8em;
+}
+.login-input{
+    display: block;
+    width: 80%;
+    height: 7.5vh;
+    outline: none;
+    border: none;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: .9em;
+    font-family: 'overpass', sans-serif;
+    font-weight: 700;
+    background-color: #f8f8f85d;
+    border-radius: .4em;
+    transition: all 1s ease-in-out;
+}
+.login-input:focus{
+    border-bottom: .2em #f8f8f8 solid;
+}
+.submit-btn-div{
+    margin-bottom: 4%;
+    padding-left: 15%;
+    margin-bottom: 6%;
+}
+.submit-btn{
+    width: 80%;
+    height: 7.5vh;
+    font-weight: 800;
+    color: #f8f8f8;
+    font-size: .6em;
+    background: #f8f8f85d;
+    border-radius: .4em;
+    border: none;
+    outline: none;
+    transition: all .2s ease-in-out;
+}
+.submit-btn:focus{
+    animation: moveUp .5s ease-in-out;
+}
+.options{
+    color: #f8f8f8;
+    font-size: .7em;
+    text-align: center;
+    margin-bottom: 4%;
+    cursor: pointer;
+}
+/*Animations*/
+@keyframes moveUp {
+    0%{
+        transform: scale(.9);
+    }
+    50%{
+        transform: scale(.4);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
