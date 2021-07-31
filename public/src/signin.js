@@ -43,7 +43,7 @@ let loginChoicesPage = ()=>{
         sectionDiv.classList.add("section-div");
         //Research Icon logo
         let logoContainer = document.createElement("div");
-        logoContainer.classList.add("logo-container")
+        logoContainer.classList.add("logo-container");
         let loginPageLogo = document.createElement('img');
         loginPageLogo.setAttribute("src","../Images/reasearch-icons_logo-removebg-preview.png");
         loginPageLogo.setAttribute("alt", "Research Icons Logo");

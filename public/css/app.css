@@ -585,3 +585,67 @@ body{
         transform: scale(0);
     }
 }
+/*contact page*/
+.contacts{
+    padding: 4% 20% 10% 12%;
+    font-family: 'overpass', sans-serif;
+}
+.contacts-handle{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    column-gap: 4em;
+}
+.handles-divs{
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.027);
+    border-radius: .8em;
+    padding: 8%;
+}
+.divisions{
+    padding: 8%;
+}
+.divisions > span{
+    color: #436b95;
+}
+.para{
+    font-size: 1.6em;
+}
+.para > a{
+    text-decoration: none;
+    color: black;
+}
+.other{
+    background-color: rgba(194, 197, 197, 0.123);
+    margin-bottom: -4em;
+    padding: 8%;
+    font-family: 'overpass', sans-serif;
+}
+.other-content{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.other-para{
+    font-size: 1.3em;
+    margin-bottom: 4%;
+}
+.order-container{
+    padding: 2% 2% 2% 0;
+
+}
+.order{
+    display: block;
+    background-color: #5d8aa8;
+    width: 30%;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.6em;
+    color: #f8f8f8;
+    border: .1em #f8f8f8 solid;
+    border-radius: .4em;
+}
+.image-container > img {
+    display: block;
+    height: 280px;
+    width: 280px;
+    border-radius: 10em;
+}
