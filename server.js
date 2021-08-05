@@ -2,6 +2,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import path from 'path';
+import open from 'open';
 
 //Modules APIs
 import config from './config/config';
@@ -27,5 +28,6 @@ const db = mongoose.connection;
 app.use('/', userController);
 //starting server
 app.listen(config.PORT, ()=>{
-    console.log(`server running on port: ${config.PORT}`)
-})
+    console.log(`server running on port: ${config.PORT}`);
+   // open(`http://localhost:${config.PORT}/`);
+});

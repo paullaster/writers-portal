@@ -65,8 +65,9 @@ body{
 .container-div-para-1{
     color: #f8f8f8;
     margin-top: 2em;
-    margin-left: -3em;
-    font-size: 3em;
+    margin-left: -4.5em;
+    font-size: 2em;
+    line-height: 1.5em;
     font-family: 'Overpass', sans-serif;
 }
 .container-div-para-1 > span{
@@ -77,6 +78,7 @@ body{
     margin-top: 4em;
     margin-left: -6em;
     font-size: 1.5em;
+    line-height: 2em;
     font-family: 'Overpass', sans-serif;
 }
 .container-div-para-2 > span{
@@ -85,20 +87,20 @@ body{
 }
 .order-btn{
  margin-top: 6em;
- margin-left: -44em;
+ margin-left: -50em;
 }
 .order-btn > a{
     display: block;
     background-color: transparent;
-    width: 25vw;
+    width: 15vw;
     text-decoration: none;
     color: #f8f8f8;
-    font-size: 3em;
+    font-size: 1.2em;
     font-family: 'Overpass', sans-serif;
     text-transform: capitalize;
     text-align: center;
-    padding: 2%;
-    border: .1em #f8f8f8 solid;
+    padding: 0 .4%;
+    border: .1em #f8f8f880 solid;
     border-radius: .4em;
 }
 /*story section*/
@@ -596,7 +598,7 @@ body{
     column-gap: 4em;
 }
 .handles-divs{
-    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.027);
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.055);
     border-radius: .8em;
     padding: 8%;
 }
@@ -648,4 +650,16 @@ body{
     height: 280px;
     width: 280px;
     border-radius: 10em;
+}
+.select-position{
+    display: block;
+    width: 80%;
+    height: 7.5vh;
+    outline: none;
+    border: none;
+    background: #f8f8f85d;
+    border-radius: .4em;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: .8em;
 }
