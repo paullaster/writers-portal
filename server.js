@@ -2,6 +2,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import path from 'path';
+import sha256 from 'sha256';
 import open from 'open';
 
 //Modules APIs
@@ -12,6 +13,8 @@ const app = express();
 
 //settings
 app.use(express.static(path.join(__dirname,'public')));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 //Database connection
 mongoose.connect(config.dbUri, {
     useNewUrlParser: true,

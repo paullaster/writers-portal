@@ -457,9 +457,10 @@ body{
     padding: 4% 16% 20% 16%;
 }
 .section-div{
-    padding: 4% 0 10% 0;
+    padding: 4% 0 8% 0;
     width: 80%;
     margin-left: 4em;
+    margin-bottom: 10em;
     border: .1em #f8f8f817 solid;
     border-radius: .4em;
     box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.048);
@@ -662,4 +663,12 @@ body{
     padding-left: 2%;
     padding-right: 2%;
     font-size: .8em;
+}
+/*
+Error label
+*/
+.error-Label{
+    color: yellow;
+    font-size: .8em;
+    padding-left: 15%;
 }

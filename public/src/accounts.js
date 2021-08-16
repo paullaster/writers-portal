@@ -14,6 +14,15 @@ let writersLoginText = document.createElement("span");
 let signInTextSpan = document.createElement("span");
 let accountTextSpan = document.createElement("span");
 let resetPasswordText = document.createElement("span");
+let accountCreationForm = document.createElement("form");
+let studentForm = document.createElement("form");
+let writersForm = document.createElement("form");
+let usernameInput = document.createElement("input");
+let passwordInput = document.createElement("input");
+let confirmPasswordInput = document.createElement("input");
+let accountTypeSelect = document.createElement("select");
+let errorDiv = document.createElement("div");
+let errorLabel = document.createElement("p");
 if(this.loaded === true){
     console.log("Content loaded successfully");
 }else{
@@ -70,11 +79,14 @@ let loginChoicesPage = ()=>{
         loginContainer.classList.add("login-container");
 
         
-        studentsLoginText.innerText = "Student login"
+        studentsLoginText.innerText = "Student login";
         studentLogin.classList.add("login-btn");
         //Writers login
-        writersLoginText.innerText = "Writers login"
+        writersLoginText.innerText = "Writers login";
         writersLogin.classList.add("login-btn");
+        //create account
+        accountTextSpan.innerText = "Create account";
+        createAccount.classList.add("login-btn");
         //Appending the elements to the page
         logoContainer.appendChild(loginPageLogo);
         sectionDiv.appendChild(logoContainer);
@@ -83,7 +95,9 @@ let loginChoicesPage = ()=>{
         loginContainer.appendChild(studentLogin);
         writersLogin.appendChild(writersLoginText);
         loginContainer.appendChild(writersLogin);
-        sectionDiv.appendChild(loginContainer)
+        createAccount.appendChild(accountTextSpan);
+        loginContainer.appendChild(createAccount);
+        sectionDiv.appendChild(loginContainer);
         loginBtnSection.appendChild(sectionDiv);
         mainBody.appendChild(loginBtnSection);
 };
@@ -116,9 +130,9 @@ let studentLoginPage = ()=>{
     //login form
     let loginFormDiv = document.createElement("div");
     loginFormDiv.classList.add("login-form-div");
-    let loginForm = document.createElement("form");
-    loginForm.setAttribute("method", "POST");
-    loginForm.setAttribute("action", "/login");
+   // let loginForm = document.createElement("form");
+   studentForm.setAttribute("method", "POST");
+  // userForm.setAttribute("action", "/login");
 
     //username
     let usernameDiv = document.createElement("div");
@@ -126,8 +140,7 @@ let studentLoginPage = ()=>{
     let usernameLabel = document.createElement("label");
     usernameLabel.classList.add("login-label");
     usernameLabel.innerText = "Username";
-    let usernameInput = document.createElement("input");
-    usernameInput.setAttribute("name","userName");
+    usernameInput.setAttribute("name","email");
     usernameInput.setAttribute("type", "email");
     usernameInput.setAttribute("maxLength", "65");
     usernameInput.setAttribute("placeholder","e.g userexample@gmail.com");
@@ -139,7 +152,6 @@ let studentLoginPage = ()=>{
     let passwordLabel = document.createElement("label");
     passwordLabel.classList.add("login-label");
     passwordLabel.innerText = "Password";
-    let passwordInput = document.createElement("input");
     passwordInput.setAttribute("name","userPassword");
     passwordInput.setAttribute("type", "password");
     passwordInput.setAttribute("maxLength", "80");
@@ -176,11 +188,11 @@ let studentLoginPage = ()=>{
     //options
     createAccount.appendChild(accountTextSpan);
     resetPassword.appendChild(resetPasswordText);
-    loginForm.appendChild(usernameDiv);
-    loginForm.appendChild(userPasswordDiv);
-    loginForm.appendChild(btnDiv);
+    studentForm.appendChild(usernameDiv);
+    studentForm.appendChild(userPasswordDiv);
+    studentForm.appendChild(btnDiv);
     //append form to div
-    loginFormDiv.appendChild(loginForm);
+    loginFormDiv.appendChild(studentForm);
     //login Div
     loginDiv.appendChild(logoDiv);
     loginDiv.appendChild(loginTextDiv)
@@ -190,6 +202,29 @@ let studentLoginPage = ()=>{
     containerDiv.appendChild(loginDiv)
     loginBtnSection.appendChild(containerDiv);
 };
+studentForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+     let userData = {
+         email: usernameInput.value,
+         password: passwordInput.value
+     }
+    fetch('/student-login',{
+        method: 'POST',
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData) 
+    })
+    .then((res)=>{
+       return res.json();
+    })
+    .then((data)=>{
+       console.log(data);
+    })
+    .catch((err)=>{
+        console.error(err);
+    });
+});
 //writers login page
 let writersLoginPage = ()=>{
     //container div
@@ -215,9 +250,9 @@ let writersLoginPage = ()=>{
     //login form
     let loginFormDiv = document.createElement("div");
     loginFormDiv.classList.add("login-form-div");
-    let loginForm = document.createElement("form");
-    loginForm.setAttribute("method", "POST");
-    loginForm.setAttribute("action", "/login");
+    //let loginForm = document.createElement("form");
+    writersForm.setAttribute("method", "POST");
+    //loginForm.setAttribute("action", "/login");
 
     //username
     let usernameDiv = document.createElement("div");
@@ -275,11 +310,11 @@ let writersLoginPage = ()=>{
     //options
     createAccount.appendChild(accountTextSpan);
     resetPassword.appendChild(resetPasswordText);
-    loginForm.appendChild(usernameDiv);
-    loginForm.appendChild(userPasswordDiv);
-    loginForm.appendChild(btnDiv);
+    writersForm.appendChild(usernameDiv);
+    writersForm.appendChild(userPasswordDiv);
+    writersForm.appendChild(btnDiv);
     //append form to div
-    loginFormDiv.appendChild(loginForm);
+    loginFormDiv.appendChild(writersForm);
     //login Div
     loginDiv.appendChild(logoDiv);
     loginDiv.appendChild(loginTextDiv)
@@ -321,9 +356,8 @@ let newAcount = ()=>{
         //login form
         let loginFormDiv = document.createElement("div");
         loginFormDiv.classList.add("login-form-div");
-        let loginForm = document.createElement("form");
-        loginForm.setAttribute("method", "POST");
-        loginForm.setAttribute("action", "/add-user");
+        accountCreationForm.setAttribute("method", "POST");
+       // userForm.setAttribute("action", "/new");
     
         //username
         let usernameDiv = document.createElement("div");
@@ -331,7 +365,6 @@ let newAcount = ()=>{
         let usernameLabel = document.createElement("label");
         usernameLabel.classList.add("login-label");
         usernameLabel.innerText = "Username";
-        let usernameInput = document.createElement("input");
         usernameInput.setAttribute("name","email");
         usernameInput.setAttribute("type", "email");
         usernameInput.setAttribute("maxLength", "65");
@@ -344,7 +377,6 @@ let newAcount = ()=>{
         let passwordLabel = document.createElement("label");
         passwordLabel.classList.add("login-label");
         passwordLabel.innerText = "Password";
-        let passwordInput = document.createElement("input");
         passwordInput.setAttribute("name","password");
         passwordInput.setAttribute("type", "password");
         passwordInput.setAttribute("maxLength", "80");
@@ -357,7 +389,6 @@ let newAcount = ()=>{
         let confirmPasswordLabel = document.createElement("label");
         confirmPasswordLabel.classList.add("login-label");
         confirmPasswordLabel.innerText = "Confirm password";
-        let confirmPasswordInput = document.createElement("input");
         confirmPasswordInput.setAttribute("name","userPassword");
         confirmPasswordInput.setAttribute("type", "password");
         confirmPasswordInput.setAttribute("maxLength", "80");
@@ -370,7 +401,6 @@ let newAcount = ()=>{
         let accounTypeLabel = document.createElement("label");
         accounTypeLabel.classList.add("login-label");
         accounTypeLabel.innerText = "Select account type";
-        let accountTypeSelect = document.createElement("select");
         accountTypeSelect.classList.add("select-position");
         let option1 = document.createElement("option");
         option1.setAttribute("value", "NONE");
@@ -416,13 +446,14 @@ let newAcount = ()=>{
         //append to form 
         //options
         singInForExistingAccount.appendChild(signInTextSpan);
-        loginForm.appendChild(usernameDiv);
-        loginForm.appendChild(userPasswordDiv);
-        loginForm.appendChild(confirmPasswordDiv);
-        loginForm.appendChild(accountTypeDiv);
-        loginForm.appendChild(btnDiv);
+        accountCreationForm.appendChild(usernameDiv);
+        accountCreationForm.appendChild(userPasswordDiv);
+        accountCreationForm.appendChild(confirmPasswordDiv);
+        accountCreationForm.appendChild(errorDiv)
+        accountCreationForm.appendChild(accountTypeDiv);
+        accountCreationForm.appendChild(btnDiv);
         //append form to div
-        loginFormDiv.appendChild(loginForm);
+        loginFormDiv.appendChild(accountCreationForm);
         //login Div
         loginDiv.appendChild(logoDiv);
         loginDiv.appendChild(loginTextDiv)
@@ -430,8 +461,51 @@ let newAcount = ()=>{
         loginDiv.appendChild(singInForExistingAccount);
         containerDiv.appendChild(loginDiv)
         loginBtnSection.appendChild(containerDiv);
-
 };
+accountCreationForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    if(passwordInput.value !== confirmPasswordInput.value){
+        errorLabel.classList.add("error-Label");
+        errorLabel.innerText = "Confirm password must be similar to password!";
+        errorDiv.appendChild(errorLabel);
+        return;
+    }else{
+        if(accountTypeSelect.value === "NONE"){
+            errorLabel.innerText = "";
+            errorLabel.classList.add("error-Label");
+            errorLabel.innerText = "Account type cannot be NONE!";
+            errorDiv.appendChild(errorLabel);
+            return;
+        }else{
+            errorLabel.innerText = "";
+        }
+    }
+    let newAccount ={
+        email: usernameInput.value,
+        password: passwordInput.value,
+        accountType: accountTypeSelect.value,
+    }
+    fetch('/add-user',{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newAccount)
+    })
+    .then((res)=>{
+        return res.json();
+    })
+    .then((data)=>{
+        console.log(data);
+        return data;
+    })
+    .catch((err)=>{
+        console.error(`Message: ${err}`);
+    });
+    //console.log(passwordInput.value)
+    //console.log(confirmPasswordInput.value)
+    //console.log(accountTypeSelect.value);
+});
 let newAccountHandler = ()=>{
     createAccount.addEventListener("click", (e)=>{
         e.preventDefault();
