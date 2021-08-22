@@ -99,8 +99,8 @@ body{
     font-family: 'Overpass', sans-serif;
     text-transform: capitalize;
     text-align: center;
-    padding: 0 .4%;
-    border: .1em #f8f8f880 solid;
+    padding: 1.2%;
+    border: .1em #f8f8f8d7 solid;
     border-radius: .4em;
 }
 /*story section*/
@@ -671,4 +671,24 @@ Error label
     color: yellow;
     font-size: .8em;
     padding-left: 15%;
+}
+/*Style the TC section*/
+.style_htm_var{
+    text-decoration: none;
+    color: rgb(3, 3, 93);
+    font-weight: 900;
+}
+.chbk-label{
+    font-size: .6em;
+    font-weight: 700;
+    margin-left: 4%;
+}
+.position-chbk{
+    color: #f8f8f8;
+    position: relative;
+}
+.chbk-input{
+    display: block;
+    position: absolute;
+    top: 36%;
 }

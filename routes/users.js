@@ -1,6 +1,6 @@
 //Import middlewares
 import express from 'express';
-import { User } from '../database/model';
+import { Student,  } from '../database/model';
 import sha256 from 'sha256';
 import path from 'path';
 
@@ -17,7 +17,7 @@ userController.use(express.static(path.join(__dirname, 'public')));
 
 //Getting user API
 userController.get('/',(req,res)=>{
-     User.find({}, (err, result)=>{
+     Student.find({}, (err, result)=>{
        res.status(200).json({
          data: result
        });
@@ -28,12 +28,13 @@ userController.get('/',(req,res)=>{
 });
 //Creating new user API
 userController.post('/add-user',(req,res)=>{
-    const { email, password } = req.body;
+    const { email, password:plainTextPassword } = req.body;
+    password = sha256(plainTextPassword);
     const userData = {
         email,
-        hashedPassword: sha256(password)
+        password,
     };
-    const newUser = new User(userData);
+    const newUser = new Student(userData);
     console.log(req.body, newUser);
     newUser
     .save()
@@ -50,4 +51,6 @@ userController.post('/student-login',(req,res)=>{
     console.log(req.body);
 })
 
-export default userController;
+export {
+     userController
+};

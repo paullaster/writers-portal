@@ -32,7 +32,9 @@
     "eslint": "^7.31.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
+    "express-validator": "^6.12.1",
     "mongoose": "^5.13.3",
+    "mongoose-type-email": "^1.1.2",
     "prettier": "^2.3.2",
     "sha256": "^0.2.0",
     "stripe": "^8.163.0"

@@ -20,9 +20,18 @@ let writersForm = document.createElement("form");
 let usernameInput = document.createElement("input");
 let passwordInput = document.createElement("input");
 let confirmPasswordInput = document.createElement("input");
+let phoneNumberInput = document.createElement("input");
 let accountTypeSelect = document.createElement("select");
+let tcAndCookiePolicyCheckBox = document.createElement("input");
 let errorDiv = document.createElement("div");
 let errorLabel = document.createElement("p");
+let usernameLabel = document.createElement("label");
+let passwordLabel = document.createElement("label");
+let confirmPasswordLabel = document.createElement("label");
+let phoneNumberLabel = document.createElement("label");
+let accounTypeLabel = document.createElement("label");
+let tcAndCookiePolicyLabel = document.createElement("label");
+let submitBtn = document.createElement("button");
 if(this.loaded === true){
     console.log("Content loaded successfully");
 }else{
@@ -137,7 +146,6 @@ let studentLoginPage = ()=>{
     //username
     let usernameDiv = document.createElement("div");
     usernameDiv.classList.add("input-div");
-    let usernameLabel = document.createElement("label");
     usernameLabel.classList.add("login-label");
     usernameLabel.innerText = "Username";
     usernameInput.setAttribute("name","email");
@@ -149,7 +157,6 @@ let studentLoginPage = ()=>{
     //password
     let userPasswordDiv = document.createElement("div");
     userPasswordDiv.classList.add("input-div");
-    let passwordLabel = document.createElement("label");
     passwordLabel.classList.add("login-label");
     passwordLabel.innerText = "Password";
     passwordInput.setAttribute("name","userPassword");
@@ -161,7 +168,6 @@ let studentLoginPage = ()=>{
     //submit button
     let btnDiv = document.createElement("div");
     btnDiv.classList.add("submit-btn-div");
-    let submitBtn = document.createElement("button");
     submitBtn.innerText = "Login";
     submitBtn.setAttribute("type", "submit");
     submitBtn.classList.add("submit-btn");
@@ -257,7 +263,6 @@ let writersLoginPage = ()=>{
     //username
     let usernameDiv = document.createElement("div");
     usernameDiv.classList.add("input-div");
-    let usernameLabel = document.createElement("label");
     usernameLabel.classList.add("login-label");
     usernameLabel.innerText = "Username";
     let usernameInput = document.createElement("input");
@@ -270,7 +275,6 @@ let writersLoginPage = ()=>{
     //password
     let userPasswordDiv = document.createElement("div");
     userPasswordDiv.classList.add("input-div");
-    let passwordLabel = document.createElement("label");
     passwordLabel.classList.add("login-label");
     passwordLabel.innerText = "Password";
     let passwordInput = document.createElement("input");
@@ -283,7 +287,6 @@ let writersLoginPage = ()=>{
     //submit button
     let btnDiv = document.createElement("div");
     btnDiv.classList.add("submit-btn-div");
-    let submitBtn = document.createElement("button");
     submitBtn.innerText = "Login";
     submitBtn.setAttribute("type", "submit");
     submitBtn.classList.add("submit-btn");
@@ -362,7 +365,6 @@ let newAcount = ()=>{
         //username
         let usernameDiv = document.createElement("div");
         usernameDiv.classList.add("input-div");
-        let usernameLabel = document.createElement("label");
         usernameLabel.classList.add("login-label");
         usernameLabel.innerText = "Username";
         usernameInput.setAttribute("name","email");
@@ -374,7 +376,6 @@ let newAcount = ()=>{
         //password
         let userPasswordDiv = document.createElement("div");
         userPasswordDiv.classList.add("input-div");
-        let passwordLabel = document.createElement("label");
         passwordLabel.classList.add("login-label");
         passwordLabel.innerText = "Password";
         passwordInput.setAttribute("name","password");
@@ -386,7 +387,6 @@ let newAcount = ()=>{
         //confirm password
         let confirmPasswordDiv = document.createElement("div");
         confirmPasswordDiv.classList.add("input-div");
-        let confirmPasswordLabel = document.createElement("label");
         confirmPasswordLabel.classList.add("login-label");
         confirmPasswordLabel.innerText = "Confirm password";
         confirmPasswordInput.setAttribute("name","userPassword");
@@ -395,10 +395,19 @@ let newAcount = ()=>{
         confirmPasswordInput.setAttribute("minLength", "8");
         confirmPasswordInput.setAttribute("required", true);
         confirmPasswordInput.classList.add("login-input");
+        //Phone number:
+        let phoneNumberDiv = document.createElement("div");
+        phoneNumberDiv.classList.add("input-div");
+        phoneNumberLabel.classList.add("login-label");
+        phoneNumberLabel.innerText = "Phone number";
+        phoneNumberInput.setAttribute("name", "userPhoneNumber");
+        phoneNumberInput.setAttribute("type", "tel");
+        phoneNumberInput.setAttribute("maxLenghth", "13");
+        phoneNumberInput.setAttribute("required", true);
+        phoneNumberInput.classList.add("login-input");
         //select account type: Student : Writers
         let accountTypeDiv = document.createElement("div");
         accountTypeDiv.classList.add("input-div");
-        let accounTypeLabel = document.createElement("label");
         accounTypeLabel.classList.add("login-label");
         accounTypeLabel.innerText = "Select account type";
         accountTypeSelect.classList.add("select-position");
@@ -412,10 +421,20 @@ let newAcount = ()=>{
         let option3 = document.createElement("option");
         option3.setAttribute("value", "Writer");
         option3.innerText = "Writer";
+        //Terms and conditions and cookie policy
+        let tcAndCookiePolicyDiv = document.createElement("div");
+        tcAndCookiePolicyDiv.classList.add("input-div","position-chbk");
+        tcAndCookiePolicyLabel.classList.add("chbk-label");
+        let tc = "<a href=\"\\#\"class=\"style_htm_var\">T&C</a>";
+        let cp = "<a href=\"\\#\" class=\"style_htm_var\">Cookie policy</a>";
+        let pp = "<a href=\"\\#\" class=\"style_htm_var\">Privacy</a>";
+        tcAndCookiePolicyLabel.innerHTML =`Read and agree to our ${tc} , ${cp} and ${pp}`;
+        tcAndCookiePolicyCheckBox.setAttribute("name", "tcCheckbox");
+        tcAndCookiePolicyCheckBox.setAttribute("type", "checkbox");
+        tcAndCookiePolicyCheckBox.classList.add("chbk-input");
         //submit button
         let btnDiv = document.createElement("div");
         btnDiv.classList.add("submit-btn-div");
-        let submitBtn = document.createElement("button");
         submitBtn.innerText = "Create account";
         submitBtn.setAttribute("type", "submit");
         submitBtn.classList.add("submit-btn");
@@ -435,12 +454,16 @@ let newAcount = ()=>{
         usernameLabel.appendChild(usernameInput);
         passwordLabel.appendChild(passwordInput);
         confirmPasswordLabel.appendChild(confirmPasswordInput);
+        phoneNumberLabel.appendChild(phoneNumberInput);
         accounTypeLabel.appendChild(accountTypeSelect);
+        tcAndCookiePolicyLabel.appendChild(tcAndCookiePolicyCheckBox);
         //label -> div
         usernameDiv.appendChild(usernameLabel);
         userPasswordDiv.appendChild(passwordLabel);
         confirmPasswordDiv.appendChild(confirmPasswordLabel);
+        phoneNumberDiv.appendChild(phoneNumberLabel);
         accountTypeDiv.appendChild(accounTypeLabel);
+        tcAndCookiePolicyDiv.appendChild(tcAndCookiePolicyLabel);
         //btn
         btnDiv.appendChild(submitBtn);
         //append to form 
@@ -449,8 +472,10 @@ let newAcount = ()=>{
         accountCreationForm.appendChild(usernameDiv);
         accountCreationForm.appendChild(userPasswordDiv);
         accountCreationForm.appendChild(confirmPasswordDiv);
-        accountCreationForm.appendChild(errorDiv)
+        accountCreationForm.appendChild(errorDiv);
+        accountCreationForm.appendChild(phoneNumberDiv);
         accountCreationForm.appendChild(accountTypeDiv);
+        accountCreationForm.appendChild(tcAndCookiePolicyDiv);
         accountCreationForm.appendChild(btnDiv);
         //append form to div
         loginFormDiv.appendChild(accountCreationForm);
@@ -477,14 +502,24 @@ accountCreationForm.addEventListener('submit', (e)=>{
             errorDiv.appendChild(errorLabel);
             return;
         }else{
-            errorLabel.innerText = "";
+            if(tcAndCookiePolicyCheckBox.checked !== true){
+                errorLabel.innerText = "";
+                errorLabel.classList.add("error-Label");
+                errorLabel.innerText = "Please read and accept our Terms and Policies to continue!";
+                errorDiv.appendChild(errorLabel);
+                return;
+            }else{
+                errorLabel.innerText = "";
+            }
         }
     }
     let newAccount ={
         email: usernameInput.value,
         password: passwordInput.value,
         accountType: accountTypeSelect.value,
+        tos: tcAndCookiePolicyCheckBox.value,
     }
+    console.log(newAccount);
     fetch('/add-user',{
         method: "POST",
         headers:{

@@ -1,5 +1,7 @@
 //import model
-import User from "./user.model";
+import Student from "./user.model";
+import Writer from "./writers.model";
 export{
-    User,
+    Student,
+    Writer,
 }

@@ -2,12 +2,12 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import path from 'path';
-import sha256 from 'sha256';
-import open from 'open';
 
 //Modules APIs
 import config from './config/config';
-import { userController } from './controller';
+import router from './routes/index'
+import { userController } from './routes/users';
+
 //Intialize app
 const app = express();
 
@@ -19,6 +19,7 @@ app.use(express.urlencoded({extended: false}));
 mongoose.connect(config.dbUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true,
     serverSelectionTimeoutMS:3000
 }).then(()=>{
     console.log("Database connection was successful");
@@ -28,7 +29,8 @@ mongoose.connect(config.dbUri, {
 const db = mongoose.connection;
 
 //Use controller APIs
-app.use('/', userController);
+app.use('/', router);
+app.use('/users', userController);
 //starting server
 app.listen(config.PORT, ()=>{
     console.log(`server running on port: ${config.PORT}`);
