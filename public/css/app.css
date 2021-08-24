@@ -692,3 +692,22 @@ Error label
     position: absolute;
     top: 36%;
 }
+/* Section : page- headings */
+.page-headings{
+    padding: 4% 20% 10% 12%;
+    font-family: 'overpass', sans-serif;
+}
+/* Section: Legend */
+.legend{
+    padding: .8% 20% 10% 12%;
+    font-family: 'overpass', sans-serif;
+}
+.legends-div{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+}
+/* Section: price-table */
+.price-table{
+    padding: 4% 20% 10% 12%;
+    font-family: 'overpass', sans-serif;
+}
