@@ -694,13 +694,56 @@ Error label
 }
 /* Section : page- headings */
 .page-headings{
-    padding: 4% 20% 10% 12%;
+    padding: 4% 20% 10% 6%;
     font-family: 'overpass', sans-serif;
+}
+.section-div-headings{
+    display: grid;
+    grid-template-columns: 75% 25%;
+    margin-right: -12em;
+}
+.sec-2-subscriber{
+    background-color:#436b95;
+    width: 100%;
+    padding: 8% 16% 16% 16%;
+    border-radius: .4em;
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.055);
+}
+.sec-2-subscriber > span{
+    font-family: 'overpass', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 700;
+    color: #f8f8f8;
+}
+.subscribe-input{
+    display: block;
+    height: 7vh;
+    width: 100%;
+    border-radius: .4em;
+    padding: 0 2em 0 2em;
+    border: none;
+    outline: none;
+    margin-top: 12%;
+    margin-bottom: 8%;
+}
+.subscribe-btn{
+    width: 100%;
+    display: block;
+    height: 7vh;
+    border-radius: .4em;
+    border:.2em #f8f8f888 solid;
+    outline: none;
+    background-color: #436b95;
+    color: #f8f8f8;
+    font-size: 1.2em;
+    font-weight: 900;
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.055);
 }
 /* Section: Legend */
 .legend{
-    margin-top: -4em;
-    padding: .8% 20% 10% 12%;
+    margin-top: -12em;
+    padding: .8% 20% 10% 6%;
     font-family: 'overpass', sans-serif;
 }
 .legends-div{
@@ -708,12 +751,17 @@ Error label
     grid-template-columns: 33.3% 33.3% 33.3%;
 }
 /* Section: price-table */
+.table-testimonails{
+    display: grid;
+    grid-template-columns: 85% 15%;
+    column-gap: 2.8em;
+}
 .price-table{
-    padding: 4% 20% 10% 12%;
+    padding: 4% 20% 10% 4%;
     font-family: 'overpass', sans-serif;
 }
 .icons{
-    color: teal;
+    color: #436b95;
     padding-right: 8%;
 }
 .text{
@@ -723,7 +771,7 @@ Error label
     
 }
 .price-table{
-    margin-top: -8em;
+    margin-top: -10.8em;
 }
 table{
     width: 100%;
@@ -743,11 +791,21 @@ table{
     display: table-cell;
     width: 16.67%;
     color: #f8f8f8;
-    font-size: 1.2em;
+    font-size: 1em;
     text-align: center;
     box-sizing: border-box;
-    padding: .8em 1.2em;
+    padding: 1em 1.2em;
 }
 .theading:last-child{
 
+}
+.testimonials{
+    background-color: orangered;
+    padding: 8%;
+    margin-right: -9.2em;
+    margin-top: 3.6em;
+    height: 60vh;
+}
+.testimoni-text{
+    padding: 4%;
 }
