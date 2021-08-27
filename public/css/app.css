@@ -707,7 +707,7 @@ Error label
     width: 100%;
     padding: 8% 16% 16% 16%;
     border-radius: .4em;
-    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.055);
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.103);
 }
 .sec-2-subscriber > span{
     font-family: 'overpass', sans-serif;
@@ -800,12 +800,32 @@ table{
 
 }
 .testimonials{
-    background-color: orangered;
     padding: 8%;
     margin-right: -9.2em;
     margin-top: 3.6em;
     height: 60vh;
+    border-radius: .4em;
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.068);
+}
+.testimonial-heading{
+    padding: 8% 4%;
+    margin-bottom: 4%;
+    position:relative;
+}
+.testimonial-heading > i{
+    color: #436b95;
+    margin-right: .2em;
+}
+.testimonial-heading > span{
+    font-size: 2em;
+    font-weight: 800;
+    border-bottom: .1em #436b95 solid;
+    position: absolute;
+    top: 24%;
+    right: 4%;
 }
 .testimoni-text{
     padding: 4%;
+    font-size: 1.2em;
+    font-weight: 600;
 }
