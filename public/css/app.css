@@ -707,7 +707,7 @@ Error label
     width: 100%;
     padding: 8% 16% 16% 16%;
     border-radius: .4em;
-    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.103);
+    box-shadow: .1em .1em .2em .4em rgba(0, 0, 0, 0.075);
 }
 .sec-2-subscriber > span{
     font-family: 'overpass', sans-serif;

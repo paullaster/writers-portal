@@ -17,6 +17,7 @@ let resetPasswordText = document.createElement("span");
 let accountCreationForm = document.createElement("form");
 let studentForm = document.createElement("form");
 let writersForm = document.createElement("form");
+let fullNameInput = document.createElement("input");
 let usernameInput = document.createElement("input");
 let passwordInput = document.createElement("input");
 let confirmPasswordInput = document.createElement("input");
@@ -25,6 +26,7 @@ let accountTypeSelect = document.createElement("select");
 let tcAndCookiePolicyCheckBox = document.createElement("input");
 let errorDiv = document.createElement("div");
 let errorLabel = document.createElement("p");
+let fullNameLabel = document.createElement("label");
 let usernameLabel = document.createElement("label");
 let passwordLabel = document.createElement("label");
 let confirmPasswordLabel = document.createElement("label");
@@ -82,7 +84,7 @@ let loginChoicesPage = ()=>{
         loginPageLogo.classList.add("login-logo");
         //Login choices text
         let para = document.createElement('p');
-        para.innerText = "Login choices";
+        para.innerText = "Account choices";
         //Container div for login buttons
         let loginContainer = document.createElement("div");
         loginContainer.classList.add("login-container");
@@ -361,7 +363,17 @@ let newAcount = ()=>{
         loginFormDiv.classList.add("login-form-div");
         accountCreationForm.setAttribute("method", "POST");
        // userForm.setAttribute("action", "/new");
-    
+        //Full name
+        let fullNameDiv = document.createElement("div");
+        fullNameDiv.classList.add("input-div");
+        fullNameLabel.classList.add("login-label");
+        fullNameLabel.innerText = "Full name";
+        fullNameInput.setAttribute("name","fullName");
+        fullNameInput.setAttribute("type", "text");
+        fullNameInput.setAttribute("maxLength", "50");
+        fullNameInput.setAttribute("placeholder","e.g Kendrick Lamar");
+        fullNameInput.setAttribute("required", true);
+        fullNameInput.classList.add("login-input");
         //username
         let usernameDiv = document.createElement("div");
         usernameDiv.classList.add("input-div");
@@ -451,6 +463,7 @@ let newAcount = ()=>{
         accountTypeSelect.appendChild(option2);
         accountTypeSelect.appendChild(option3);
         //input->label
+        fullNameLabel.appendChild(fullNameInput);
         usernameLabel.appendChild(usernameInput);
         passwordLabel.appendChild(passwordInput);
         confirmPasswordLabel.appendChild(confirmPasswordInput);
@@ -458,6 +471,7 @@ let newAcount = ()=>{
         accounTypeLabel.appendChild(accountTypeSelect);
         tcAndCookiePolicyLabel.appendChild(tcAndCookiePolicyCheckBox);
         //label -> div
+        fullNameDiv.appendChild(fullNameLabel);
         usernameDiv.appendChild(usernameLabel);
         userPasswordDiv.appendChild(passwordLabel);
         confirmPasswordDiv.appendChild(confirmPasswordLabel);
@@ -469,6 +483,7 @@ let newAcount = ()=>{
         //append to form 
         //options
         singInForExistingAccount.appendChild(signInTextSpan);
+        accountCreationForm.appendChild(fullNameDiv);
         accountCreationForm.appendChild(usernameDiv);
         accountCreationForm.appendChild(userPasswordDiv);
         accountCreationForm.appendChild(confirmPasswordDiv);
@@ -514,6 +529,7 @@ accountCreationForm.addEventListener('submit', (e)=>{
         }
     }
     let newAccount ={
+        fullName : fullNameInput.value,
         email: usernameInput.value,
         password: passwordInput.value,
         accountType: accountTypeSelect.value,

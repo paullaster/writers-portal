@@ -28,9 +28,10 @@ userController.get('/',(req,res)=>{
 });
 //Creating new user API
 userController.post('/add-user',(req,res)=>{
-    const { email, password:plainTextPassword } = req.body;
+    const { fullName,email, password:plainTextPassword } = req.body;
     password = sha256(plainTextPassword);
     const userData = {
+        fullName,
         email,
         password,
     };
